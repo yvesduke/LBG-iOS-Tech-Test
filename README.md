@@ -2,15 +2,15 @@
 
 
 #### Intro :
-This is a small app that fetches product data from an API EndPoint and displays a list of product name with thier prices. The app also allows users to click on any of the products to view product description. The app is implemented following clean architecture with SwiftUI and async await for service call to ensure a clear separation of concerns.
+This is a small app that fetches product data from an API EndPoint and displays a list of product name with their prices. The app also allows users to click on any of the products to view product description. The app is implemented following clean architecture with SwiftUI and async await for service call to ensure a clear separation of concerns.
 
 #### Quick start :
 Using either a real device or a simulator, lunch the app and you will be presented with a list of Products and their prices. You can scroll up and down to see a full list of products. If you click on one of the product displayed on the list, you will be presented with a detail page containing product tittle and Product description.
 
 #### Status :
 - The app is currently using SwiftUI to create user Interface. It is build using Clean architecture with Testcases and it uses async await to fetch data from the API.
-- Implemented an API call using URLSession to retrieve the necessary data, parse Json data using Codable, and display it in the app's user interface.
-- The app currenlty supports different ios screen sizes and targets ios 13 and above
+- Implemented an API call using URLSession to retrieve the necessary data, parse Json data using JSONDecoder, and display it in the app's user interface.
+- The app currenlty supports different iOS screen sizes and targets iOS 13 and above
 - Writen unit tests for the network layer using XCTest.
 - Implemented Error handling
 
