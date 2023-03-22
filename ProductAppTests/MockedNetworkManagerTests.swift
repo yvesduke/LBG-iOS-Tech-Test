@@ -14,10 +14,12 @@ class MockedNetworkManagerTests: XCTestCase {
     func testGetDataFromAPI_Success() async throws {
         // Given
         let mockedNetworkManager = MockedNetworkManager()
+        let repo = ProductsListRepositoryImplementation(networkManager: mockedNetworkManager)
         let url = URL(string: "productData")!
         
         // When
-        let data = try await mockedNetworkManager.getDataFromAPI(url: url)
+//        let data = try await mockedNetworkManager.getDataFromAPI(url: url)
+        let data = try await repo.getProducts(for: url)
         
         // Then
         XCTAssertNotNil(data, "Data Should not be nil")
@@ -26,11 +28,13 @@ class MockedNetworkManagerTests: XCTestCase {
     func testGetDataFromAPI_DataNotFound() async throws {
         // Given
         let mockedNetworkManager = MockedNetworkManager()
+        let repo = ProductsListRepositoryImplementation(networkManager: mockedNetworkManager)
         let url = URL(string: "invalidPath")!
         
         // When
         do {
-            let _ = try await mockedNetworkManager.getDataFromAPI(url: url)
+//            let _ = try await mockedNetworkManager.getDataFromAPI(url: url)
+            let _ = try await repo.getProducts(for: url)
             XCTFail("Expected an error to be thrown")
         } catch let error as NetworkError {
             // Then
